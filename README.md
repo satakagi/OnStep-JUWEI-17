@@ -127,7 +127,7 @@ Harmonic drives can have ±1 variation depending on which spline is fixed.
 **Measure your actual gear ratio to ensure accuracy — do not trust online listings.**
 
 ---
-
+<!-- TBD
 ### Sample Config Files
 
 Sample Config.h and Pins.MaxESP3.h files are included in:
@@ -137,6 +137,7 @@ Sample Config.h and Pins.MaxESP3.h files are included in:
 You must still modify them based on your stepper motors, gearing, and microstepping.
 
 ---
+-->
 
 ### Important Notes on Configuration
 
