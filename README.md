@@ -1,2 +1,171 @@
 # OnStep-JUWEI-17
-An open-source hardware controller for the JUWEI-17 harmonic drive equatorial mount, based on the OnStep ESP32 Mini. By using a Giteki-certified module, it can be used with peace of mind in Japan, and can be freely developed and improved with the open-source community overseas.
+
+## Table of Contents
+
+- [Introduction](#introduction)  
+- [Why This Project?](#why-this-project)  
+- [Disclaimer](#disclaimer)  
+- [Features](#features)  
+- [Hardware](#hardware)  
+- [Firmware and Config.h Configuration](#firmware-and-configh-configuration)  
+- [Usage](#usage)  
+- [Licensing](#licensing)  
+- [Contribution & Support](#contribution--support)  
+- [Contact](#contact)
+
+---
+
+## Introduction
+
+This repository contains the open-source hardware (OSH) design files (KiCad project) for a custom **OnStep-JUWEI-17** controller board specifically tailored for the JUWEI-17 harmonic drive equatorial mount. This board provides a robust and configurable solution for upgrading the JUWEI-17 mount with the powerful OnStep firmware, enhancing its tracking accuracy and GoTo capabilities.
+
+The circuit design is based on Roman Hujer's OnStep ESP Mini project, with specific adaptations for the JUWEI-17 mount — most notably, a hardware-controlled brake system.
+
+---
+
+## Why This Project?
+
+This project addresses a critical issue for users in Japan (and possibly elsewhere):  
+The stock JUWEI-17 controller often includes a Wi-Fi/Bluetooth module that lacks Japan's Radio Law certification (技適マーク - Giteki Mark). Operating such a device is illegal in Japan.
+
+This **OnStep-JUWEI-17** project offers a compliant alternative, using certified ESP32 and ESP8266 (ESP-12F) modules that include Giteki certification.  
+The goal is to provide a legal, open, and high-performance upgrade path for the JUWEI-17 mount.
+
+---
+
+## Disclaimer
+
+This project involves electronic assembly, including SMD components. Risks include, but are not limited to, electric shock, fire, damage, or injury.
+
+**This project is provided "as is", with no warranty.**  
+Use at your own risk. Proper soldering skills and electronic knowledge are strongly recommended.
+
+---
+
+## Features
+
+- Based on Roman Hujer's OnStep ESP Mini, functionally similar to OnStep MAX ESP3  
+- Drop-in installation into the JUWEI-17 mount — no enclosure modifications required  
+- Hardware-Controlled Brake System: Uses the ENABLE signal from motor drivers — no firmware tweaks needed  
+- Open-Source Hardware: KiCad design files included
+
+---
+
+## Hardware
+
+Custom PCB tailored for the JUWEI-17, based on the ESP32 Mini reference.  
+Operates on 12V DC, supporting the original brake solenoid and motor drivers.
+
+Refer to the [ASSEMBLY_GUIDE.md](ASSEMBLY_GUIDE.md) for detailed component list and assembly instructions.
+
+### Manufacturing Files
+The complete set of Gerber and drill files required for PCB manufacturing can be found in the [KiCad/gerber/](KiCad/gerber/) directory. These files are ready for submission to a PCB fabrication service.
+
+Location: [KiCad/gerber/](KiCad/gerber/)
+
+---
+
+## **Images**
+
+Here are some visual references for the project.
+
+### **Assembled Board**
+![Assembled Board](images/board_photo.jpg)
+
+### **Installed on JUWEI-17 Mount**
+![Installed on JUWEI-17 Mount](images/mount_installed.jpg)
+
+### **PCB Design (Gerber View)**
+![PCB Design (Gerber View)](images/gerber_view.png)
+
+### **Schematic**
+![Schematic](images/schematic_diagram.png)
+
+---
+
+## Firmware and Config.h Configuration
+
+Uses standard OnStep firmware.  
+Circuitry is nearly identical to the OnStep ESP Mini (minus the brake circuit), so you should reference that project for pin definitions and configurations.
+
+---
+
+### Specific Pin Map Settings
+
+The board mirrors the following assignments from the OnStep ESP Mini:
+
+- Aux7 = 36  
+- OneWirePin = 15  
+- ReticlePin = 19  
+- TonePin = 2  
+- PecPin = 39  
+- AnalogPecPin = A3  
+
+---
+
+### ⚠️ Note for OnStepX Users
+
+Variable names may differ in newer firmware.  
+You will need to adapt these pin definitions to the appropriate structure in your version of Config.h and the corresponding Pins.*.h files.
+
+---
+
+### Gear Ratio Configuration
+
+In Config.h, the gear ratio and motor settings must be exact. Errors will affect tracking and GoTo precision.
+
+#### ⚠️ Important for JUWEI-17: "400:1" May Be Inaccurate
+
+The motors (usually Sumtor 42HS4013A4/B4, 1.8°/step NEMA17) are often listed with a "400:1" reduction, but user-reported data suggests the real gear ratio is 404:1.
+
+From Cloudy Nights and firmware analysis:
+
+- JUWEI original firmware uses 3591.111 steps/degree  
+- Formula: (200 steps/rev × 16 microsteps × 404) ÷ 360 = 3591.111...
+
+Harmonic drives can have ±1 variation depending on which spline is fixed.  
+**Measure your actual gear ratio to ensure accuracy — do not trust online listings.**
+
+---
+
+### Sample Config Files
+
+Sample Config.h and Pins.MaxESP3.h files are included in:
+
+`Firmware_Examples/OnStepX_JUWEI-17/`
+
+You must still modify them based on your stepper motors, gearing, and microstepping.
+
+---
+
+### Important Notes on Configuration
+
+- Ensure all pin/motor settings in Config.h and Pins.*.h match your board  
+- Always re-upload firmware after making changes
+
+---
+
+## Usage
+
+To build and install this controller, follow the detailed instructions in [ASSEMBLY_GUIDE.md](ASSEMBLY_GUIDE.md).
+
+---
+
+## Licensing
+
+This design is derived from the onstep-esp-mini project and is licensed under GPLv3.
+
+✳️ _Note:_ Although GPLv3 is suitable for firmware, open hardware often benefits from dedicated licenses like the TAPR Open Hardware License (OHL). These better address physical product concerns such as patents and manufacturing rights.
+
+---
+
+## Contribution & Support
+
+Contributions welcome!  
+You can:
+
+- Report bugs via GitHub Issues  
+- Submit Pull Requests  
+- Join discussion on Cloudy Nights forum
+
+---

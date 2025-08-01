@@ -1,0 +1,37 @@
+# KiCad project files to ignore
+# The following patterns apply only to files within the "KiCad/" subdirectory.
+
+# Backup files and directories
+# The backup folder is created by the save mechanism
+KiCad/OnStepJuwei17-backups/
+# Other temporary backup files that KiCad might create
+KiCad/*.bak
+KiCad/*.orig
+KiCad/*~
+KiCad/*.log
+KiCad/*.old
+KiCad/*.tmp
+
+# Cache and settings files
+# This is a cache of footprint info, can be recreated
+KiCad/fp-info-cache
+# Local user-specific preferences file, often contains view settings and
+# may contain sensitive info if git integration is used.
+KiCad/*.kicad_prl
+# The sym-lib-table contains local library information, it should be committed.
+# However, if using global libraries, it might need to be ignored.
+# For this project, we'll assume a mix and ignore some related caches.
+KiCad/*-cache.lib
+KiCad/*.sch-back.bak
+KiCad/*.kicad_pcb-back.bak
+KiCad/sym-lib-table
+
+# Generated documentation files
+# The PDF export of the schematic
+KiCad/OnStepJuwei17.pdf
+
+# Auto-save files
+KiCad/_autosave*
+KiCad/*.pcb_new-bak
+KiCad/*.sch-back
+

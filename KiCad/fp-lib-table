@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "HW-613")(type "KiCad")(uri "${KIPRJMOD}/my_footprints/HW-613.pretty")(options "")(descr ""))
+)
