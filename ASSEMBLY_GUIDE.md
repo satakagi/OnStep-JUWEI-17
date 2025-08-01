@@ -10,7 +10,15 @@ Before beginning the assembly of this PCB, it is assumed that you have experienc
 
 The design of this PCB includes important considerations for component selection and placement. Following these instructions will help prevent assembly errors and component damage.
 
-### **2.1. DCDC Converter (e.g., HW-613) Installation Notes**
+### **2.1 Certified Wi-Fi/Bluetooth Modules**
+This board is designed to be used with Giteki-certified ESP32 or ESP8266 modules for legal operation in Japan. When sourcing modules, please ensure they have the official Giteki mark.
+
+Recommended Modules (with Giteki Mark):
+
+* ESP32: Espressif's ESP32-WROOM-32, ESP32-WROOM-32D, and ESP32-WROOM-32E
+* ESP8266: Ai-Thinker Technology's ESP-12F
+
+### **2.2. DCDC Converter (e.g., HW-613) Installation Notes**
 
 The HW-613 DCDC converter module features a jumper (or solder pad) to set its output to a fixed 5V. However, there is a **critical, easily overlooked detail that can lead to significant frustration** (a pitfall I personally encountered during assembly\!): simply closing this jumper is often not enough to fix the output at 5V.
 
@@ -24,7 +32,7 @@ Only after ensuring this hidden trace is completely cut should you proceed to cl
 
 ![close-up photo of the HW-613 module, with the specific, hidden jumper trace](images/hw613_jumper.jpg)
 
-### **2.2. Brake Control Circuit Component Selection and Other Considerations**
+### **2.3. Brake Control Circuit Component Selection and Other Considerations**
 
 The PCB footprints for the transistors in this circuit are designed for **through-hole (TH) packages**. While component substitutions *might* be possible, **extreme caution is advised**. When using substitutes, **you *must* verify the datasheet for its pinout, voltage/current ratings, and power dissipation.** Using an incorrect or unsuitable substitute component can lead to malfunction or damage to the board.
 
@@ -49,7 +57,7 @@ A capacitor (e.g., 0.1uF in my build) is placed in the brake solenoid control ci
 d. Hardware-Controlled Brake System Addendum  
 This JUWEI-17 specific board features a fully hardware-controlled brake system. The brake is automatically engaged or disengaged by detecting the ENABLE signal from the motor drivers, meaning no OnStep software modifications, patches, or specific Config.h brake pin configurations are required for this board's brake functionality.
 
-### **2.3. Other Important Assembly Considerations**
+### **2.4. Other Important Assembly Considerations**
 
 a. PCB Mounting & Spacers:  
 Some signal traces are very close (approx. 1mm) to the PCB mounting holes. Therefore, using insulating hardware like nylon nuts and spacers is highly recommended to prevent potential shorts, even though the PCB has solder mask and the enclosure might be anodized. (Refer to provided photos for my mounting method).  
@@ -72,7 +80,7 @@ The battery backup for the RTC is external. A standard coin cell (such as CR2032
 g. Buzzer (TonePin):  
 The board includes a footprint for a buzzer connected to the TonePin. OnStep firmware supports both passive (piezo speaker type) and active buzzers, with selection often configurable in Config.h. For this board, I have successfully tested with a passive piezo type buzzer.
 
-### **2.4. Jumper Settings**
+### **2.5. Jumper Settings**
 
 Several jumpers on the PCB control important functionalities. It is crucial to set these correctly for your desired operation. **For the definitive location and function of each jumper, always refer to the KiCad schematic files provided in the repository.**
 
