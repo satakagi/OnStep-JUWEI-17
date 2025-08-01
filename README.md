@@ -44,7 +44,7 @@ Use at your own risk. Proper soldering skills and electronic knowledge are stron
 
 ## Features
 
-- Based on Roman Hujer's OnStep ESP Mini, functionally similar to OnStep MAX ESP3  
+- Based on Roman Hujer's [OnStep ESP Mini](https://oshwlab.com/hujer.roman/onstep-esp-mini), functionally similar to OnStep MAX ESP3  
 - Drop-in installation into the JUWEI-17 mount — no enclosure modifications required  
 - Hardware-Controlled Brake System: Uses the ENABLE signal from motor drivers — no firmware tweaks needed  
 - Open-Source Hardware: KiCad design files included
@@ -118,7 +118,7 @@ In Config.h, the gear ratio and motor settings must be exact. Errors will affect
 
 The motors (usually Sumtor 42HS4013A4/B4, 1.8°/step NEMA17) are often listed with a "400:1" reduction, but user-reported data suggests the real gear ratio is 404:1.
 
-From Cloudy Nights and firmware analysis:
+From [Cloudy Nights post](https://www.cloudynights.com/topic/918425-juwei-17-mounts-on-aliexpress/?p=13665973):
 
 - JUWEI original firmware uses 3591.111 steps/degree  
 - Formula: (200 steps/rev × 16 microsteps × 404) ÷ 360 = 3591.111...
