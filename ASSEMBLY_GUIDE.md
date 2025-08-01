@@ -68,7 +68,7 @@ The resistor values for the LEDs in the schematic are approximate. Choose approp
 e. Camera Shot Circuit:  
 The camera shot control circuit is directly transplanted from the original design but has not been tested with this board. Use this functionality at your own discretion.  
 f. External Battery Backup (RTC):  
-The battery backup for the RTC is external. A standard coin cell holder should be connected to the designated connector on the board.  
+The battery backup for the RTC is external. A standard coin cell (such as CR2032) holder should be connected to the designated connector on the board.  
 g. Buzzer (TonePin):  
 The board includes a footprint for a buzzer connected to the TonePin. OnStep firmware supports both passive (piezo speaker type) and active buzzers, with selection often configurable in Config.h. For this board, I have successfully tested with a passive piezo type buzzer.
 
