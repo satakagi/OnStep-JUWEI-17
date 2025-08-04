@@ -116,7 +116,9 @@ In Config.h, the gear ratio and motor settings must be exact. Errors will affect
 
 #### ⚠️ Important for JUWEI-17: "400:1" May Be Inaccurate
 
-The motors (usually Sumtor 42HS4013A4/B4, 1.8°/step NEMA17) are often listed with a "400:1" reduction, but user-reported data suggests the real gear ratio is 404:1.
+The JUWEI-17 mount is typically advertised with a gear system consisting of a 1:100 harmonic drive and a 1:4 pulley, for a total reduction of 400:1. The motors are standard NEMA17, with a 1.8°/step resolution.
+
+However, based on user-reported data, the actual gear ratio appears to be 404:1, not 400:1.
 
 From [Cloudy Nights post](https://www.cloudynights.com/topic/918425-juwei-17-mounts-on-aliexpress/?p=13665973):
 
