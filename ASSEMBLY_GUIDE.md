@@ -54,6 +54,7 @@ Given this common low current requirement:
 c. Solenoid Protection Diode and Capacitor  
 The circuit includes a diode for flyback protection across the solenoid. While the original part number is unknown, any general-purpose Schottky or fast-recovery diode should be suitable. Select a diode with sufficient current and voltage ratings for your solenoid.  
 A capacitor (e.g., 0.1uF in my build) is placed in the brake solenoid control circuit for noise suppression. While its exact value is not extremely critical for basic operation, 0.1uF is a common choice for general noise filtering.  
+
 d. Hardware-Controlled Brake System Addendum  
 This JUWEI-17 specific board features a fully hardware-controlled brake system. The brake is automatically engaged or disengaged by detecting the ENABLE signal from the motor drivers, meaning no OnStep software modifications, patches, or specific Config.h brake pin configurations are required for this board's brake functionality.
 
@@ -61,6 +62,7 @@ This JUWEI-17 specific board features a fully hardware-controlled brake system. 
 
 a. PCB Mounting & Spacers:  
 Some signal traces are very close (approx. 1mm) to the PCB mounting holes. Therefore, using insulating hardware like nylon nuts and spacers is highly recommended to prevent potential shorts, even though the PCB has solder mask and the enclosure might be anodized. (Refer to provided photos for my mounting method).  
+
 b. Connector Orientation & Polarity:  
 Pay close attention to connector polarity for all connectors (especially power, motors, and sensors).
 
@@ -71,12 +73,23 @@ Pay close attention to connector polarity for all connectors (especially power, 
 
 c. USB Serial IC (CH340):  
 The PCB pattern for the USB-to-Serial converter is designed for the CH340G, which typically requires an external crystal and its load capacitors. However, I successfully used a CH340C, which does not require these external components. (My assembly photos reflect this, showing an absent crystal and its capacitors).  
+
 d. LED Current-Limiting Resistors:  
-The resistor values for the LEDs in the schematic are approximate. Choose appropriate resistor values based on your selected LEDs' forward voltage and desired brightness to ensure proper operation and prevent overcurrent.  
+The resistor values for the LEDs were transcribed directly from the original author's schematic. I have set them to allow approximately 7mA of current to flow to each LED.
+
+**Note on Recommended Values:** While the schematic provides initial values, for optimal brightness (assuming red LEDs with ~1.9V forward voltage) and safe operation, the following resistor values are recommended:
+
+* **D2 PWR (Power Indicator):** Change R18 to **470Ω** (from 10KΩ) for ~6.6mA current from 5V.
+* **D3 DRV (Drive Indicator):** Change R19 to **220Ω** (from 10KΩ) for ~6.4mA current from 3.3V.
+
 e. Camera Shot Circuit:  
-The camera shot control circuit is directly transplanted from the original design but has not been tested with this board. Use this functionality at your own discretion.  
+The camera shot control circuit has been tested and confirmed to work with this board. 
+
+**Note on Recommended Values:** The schematic specifies R17 as 1KΩ. However, through personal testing, a **green indicator LED was found to work reliably with a 33Ω resistor**, producing a reasonable brightness. This suggests the specific green LED used has a lower forward voltage than typical datasheet values. A red indicator LED in series with the PC817's internal LED (total forward voltage ~3.1V) would also work, but for more reliable operation with a standard green LED, it is recommended to test with a resistor value in the range of **33Ω to 47Ω**.
+
 f. External Battery Backup (RTC):  
 The battery backup for the RTC is external. A standard coin cell (such as CR2032) holder should be connected to the designated connector on the board.  
+
 g. Buzzer (TonePin):  
 The board includes a footprint for a buzzer connected to the TonePin. OnStep firmware supports both passive (piezo speaker type) and active buzzers, with selection often configurable in Config.h. For this board, I have successfully tested with a passive piezo type buzzer.
 
