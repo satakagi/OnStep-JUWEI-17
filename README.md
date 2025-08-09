@@ -148,6 +148,17 @@ You must still modify them based on your stepper motors, gearing, and microstepp
 
 ---
 
+## Tested and Confirmed Motor Driver Modules
+The following motor driver modules have been successfully tested and confirmed to work with this board. The values in quotes ("...") are the corresponding AXIS?_DRIVER_MODEL settings in Config.h.
+
+- BigTreeTech TMC2130 V3.0: "TMC2130"
+- DRV8825 (Brand Unknown): "DRV8825"
+- TMC2209 Module included with JUWEI-17 (Legacy Tested): "TMC2209S"
+
+Note: All drivers were tested with 16 microsteps, which is the same setting as the original mount.
+
+---
+
 ## Usage
 
 To build and install this controller, follow the detailed instructions in [ASSEMBLY_GUIDE.md](ASSEMBLY_GUIDE.md).
