@@ -106,3 +106,13 @@ Several jumpers on the PCB control important functionalities. It is crucial to s
   * **J13 (DTR Reset):** This jumper is used in conjunction with the DTR (Data Terminal Ready) signal from the USB-to-Serial converter to perform a **reset** on the selected processor, which is often required for initiating firmware uploads.
 
 **Always consult the KiCad schematic for the exact configuration required to enable firmware upload and select the correct processor for USB communication.**
+
+### **2.6. Connector Selection & Sourcing**
+
+To ensure proper fit and function, please pay close attention to the following connector specifications.
+
+* **JST XH Connectors**: The connectors that appear **white** on the PCB photo (two 4-pin and three 2-pin) are **JST XH type**. These are standard and widely available.
+
+* **6P6C (RJ12) Connector**: The connector for the RJ12 port is a **horizontal type (through-hole)**. **Crucially, the pins (electrodes) must be located on the *bottom* side of the connector.** Some similar-looking connectors have the pins on the top side, which are not compatible with this PCB layout. Double-check this detail before purchasing.
+
+* **Component Sourcing Note**: For resistors and XH connectors, it is often more economical and convenient to purchase an **assortment kit**. These kits typically contain a wide range of values or pin counts, which can be very helpful for prototyping and avoiding the need to order individual components separately.
