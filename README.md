@@ -172,7 +172,7 @@ To build and install this controller, follow the detailed instructions in [ASSEM
 
 ## Licensing
 
-This design is derived from the onstep-esp-mini project and is licensed under GPLv3.
+This design is derived from the [OnStep ESP32 Mini](https://oshwlab.com/hujer.roman/onstep-esp-mini) project and is licensed under GPLv3.
 
 ✳️ _Note:_ Although GPLv3 is suitable for firmware, open hardware often benefits from dedicated licenses like the TAPR Open Hardware License (OHL). These better address physical product concerns such as patents and manufacturing rights.
 
