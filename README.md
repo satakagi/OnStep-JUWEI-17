@@ -81,6 +81,9 @@ Here are some visual references for the project.
 ### **Schematic**
 ![Schematic](images/schematic_diagram.png)
 
+### **PCB image**
+![PCB image](images/pcb_photo.jpg)
+
 ---
 
 ## Firmware and Config.h Configuration
