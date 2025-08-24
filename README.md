@@ -128,7 +128,7 @@ However, based on user-reported data, the actual gear ratio appears to be 404:1,
 From [Cloudy Nights post](https://www.cloudynights.com/topic/918425-juwei-17-mounts-on-aliexpress/?p=13665973):
 
 - JUWEI original firmware uses 3591.111 steps/degree  
-- Formula: (200 steps/rev × 16 microsteps × 404) ÷ 360 = 3591.111...
+- Formula: (200 steps/rev × 16 microsteps × **101** x 4) ÷ 360 = 3591.111...
 
 Harmonic drives can have ±1 variation depending on which spline is fixed.  
 **Measure your actual gear ratio to ensure accuracy — do not trust online listings.**
