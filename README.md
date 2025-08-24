@@ -19,7 +19,7 @@
 
 This repository contains the open-source hardware (OSH) design files (KiCad project) for a custom **OnStep-JUWEI-17** controller board specifically tailored for the JUWEI-17 harmonic drive equatorial mount. This board provides a robust and configurable solution for upgrading the JUWEI-17 mount with the powerful OnStep firmware, enhancing its tracking accuracy and GoTo capabilities.
 
-The circuit design is based on Roman Hujer's OnStep ESP Mini project, with specific adaptations for the JUWEI-17 mount — most notably, a hardware-controlled brake system.
+The circuit design is based on Roman Hujer's OnStep ESP32 Mini project, with specific adaptations for the JUWEI-17 mount — most notably, a hardware-controlled brake system.
 
 ---
 
@@ -44,7 +44,7 @@ Use at your own risk. Proper soldering skills and electronic knowledge are stron
 
 ## Features
 
-- Based on Roman Hujer's [OnStep ESP Mini](https://oshwlab.com/hujer.roman/onstep-esp-mini), functionally similar to OnStep MAX ESP3  
+- Based on Roman Hujer's [OnStep ESP32 Mini](https://oshwlab.com/hujer.roman/onstep-esp-mini), functionally similar to OnStep MAX ESP3  
 - Drop-in installation into the JUWEI-17 mount — no enclosure modifications required  
 - Hardware-Controlled Brake System: Uses the ENABLE signal from motor drivers — no firmware tweaks needed  
 - Open-Source Hardware: KiCad design files included
@@ -53,7 +53,7 @@ Use at your own risk. Proper soldering skills and electronic knowledge are stron
 
 ## Hardware
 
-Custom PCB tailored for the JUWEI-17, based on the ESP32 Mini reference.  
+Custom PCB tailored for the JUWEI-17, based on the OnStep ESP32 Mini reference.  
 Operates on 12V DC, supporting the original brake solenoid and motor drivers.
 
 Refer to the [ASSEMBLY_GUIDE.md](ASSEMBLY_GUIDE.md) for detailed component list and assembly instructions.
@@ -89,13 +89,13 @@ Here are some visual references for the project.
 ## Firmware and Config.h Configuration
 
 Uses standard OnStep firmware.  
-Circuitry is nearly identical to the OnStep ESP Mini (minus the brake circuit), so you should reference that project for pin definitions and configurations.
+Circuitry is nearly identical to the OnStep ESP32 Mini (minus the brake circuit), so you should reference that project for pin definitions and configurations.
 
 ---
 
 ### Specific Pin Map Settings
 
-The pin map settings for this board are a modification of the standard Pins.MaxESP3.h file. They mirror the specific assignments documented by the [OnStep ESP Mini](https://oshwlab.com/hujer.roman/onstep-esp-mini) project on OSHWLab.
+The pin map settings for this board are a modification of the standard Pins.MaxESP3.h file. They mirror the specific assignments documented by the [OnStep ESP32 Mini](https://oshwlab.com/hujer.roman/onstep-esp-mini) project on OSHWLab.
 
 For your reference, the following assignments are replicated on this board:
 
