@@ -95,7 +95,9 @@ Circuitry is nearly identical to the OnStep ESP Mini (minus the brake circuit), 
 
 ### Specific Pin Map Settings
 
-The board mirrors the following assignments from the OnStep ESP Mini:
+The pin map settings for this board are a modification of the standard Pins.MaxESP3.h file. They mirror the specific assignments documented by the [OnStep ESP Mini](https://oshwlab.com/hujer.roman/onstep-esp-mini) project on OSHWLab.
+
+For your reference, the following assignments are replicated on this board:
 
 - Aux7 = 36  
 - OneWirePin = 15  
