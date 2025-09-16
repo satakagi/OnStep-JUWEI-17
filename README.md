@@ -26,7 +26,7 @@ The circuit design is based on Roman Hujer's OnStep ESP32 Mini project, with spe
 ## Why This Project?
 
 This project addresses a critical issue for users in Japan (and possibly elsewhere):  
-The stock JUWEI-17 controller often includes a Wi-Fi/Bluetooth module that lacks Japan's Radio Law certification (技適マーク - Giteki Mark). Operating such a device is illegal in Japan.
+The stock JUWEI-17 controller often includes a Wi-Fi/Bluetooth module that lacks Japan's Radio Law certification ([技適マーク - Giteki Mark](https://www.tele.soumu.go.jp/e/adm/monitoring/illegal/monitoring_qa/index.htm)). Operating such a device is illegal in Japan.
 
 This **OnStep-JUWEI-17** project offers a compliant alternative, using certified ESP32 and ESP8266 (ESP-12F) modules that include Giteki certification.  
 The goal is to provide a legal, open, and high-performance upgrade path for the JUWEI-17 mount.
