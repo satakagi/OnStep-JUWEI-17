@@ -176,8 +176,8 @@ To build and install this controller, follow the detailed instructions in [ASSEM
 
 ### Hardware and Wiring
 - This method utilizes pins otherwise designated for PEC and the Reticle light:
-- PPS Signal (Time Sync): Connect the GPS PPS (Pulse Per Second) output to the PEC Input.
-- RX Data (Serial Data): Connect the GPS TX output (data) to the Reticle Pin.
+- PPS Signal (Time Sync): Connect the GPS PPS (Pulse Per Second) output to the PEC Input (IO39).
+- RX Data (Serial Data): Connect the GPS TX output (data) to the Reticle Pin (IO19).
 - Critical Note: To ensure a clean signal path for the GPS, you must omit R20 and remove C7 during board assembly.
 
 ### Firmware Configuration
