@@ -8,7 +8,8 @@
 - [Features](#features)  
 - [Hardware](#hardware)  
 - [Firmware and Config.h Configuration](#firmware-and-configh-configuration)  
-- [Usage](#usage)  
+- [Usage](#usage)
+- [Optional Feature: GPS Integration](#optional-feature-gps-integration)
 - [Licensing](#licensing)  
 - [Contribution & Support](#contribution--support)  
 - [Contact](#contact)
@@ -167,6 +168,20 @@ Note: All drivers were tested with 16 microsteps, which is the same setting as t
 ## Usage
 
 To build and install this controller, follow the detailed instructions in [ASSEMBLY_GUIDE.md](ASSEMBLY_GUIDE.md).
+
+---
+
+## Optional Feature: GPS Integration
+[A user successfully implemented](https://www.facebook.com/groups/349395118118532/posts/675489348842439/?comment_id=720520087672698) full GPS functionality by creatively repurposing existing pins on the AUX header and defining a Software Serial interface in OnStepX.
+
+### Hardware and Wiring
+- This method utilizes pins otherwise designated for PEC and the Reticle light:
+- PPS Signal (Time Sync): Connect the GPS PPS (Pulse Per Second) output to the PEC Input.
+- RX Data (Serial Data): Connect the GPS TX output (data) to the Reticle Pin.
+- Critical Note: To ensure a clean signal path for the GPS, you must omit R20 and remove C7 during board assembly.
+
+### Firmware Configuration
+The GPS functionality must be enabled by defining the appropriate Software Serial pins within the OnStepX configuration file (Config.h).
 
 ---
 
