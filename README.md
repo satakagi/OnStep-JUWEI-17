@@ -39,7 +39,7 @@ The goal is to provide a legal, open, and high-performance upgrade path for the 
 This project involves electronic assembly, including SMD components. Risks include, but are not limited to, electric shock, fire, damage, or injury.
 
 **This project is provided "as is", with no warranty.**  
-Use at your own risk. Proper soldering skills and electronic knowledge are strongly recommended.
+Use at your own risk. While the board relies mostly on through-hole parts, experience with hand-soldering wide-pitch SMD components is strongly recommended.
 
 ---
 
