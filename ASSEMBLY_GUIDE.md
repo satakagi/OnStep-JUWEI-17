@@ -2,6 +2,8 @@
 
 This document provides detailed instructions and critical considerations for assembling the OnStep controller board for the JUWEI-17 EQ mount. Meticulous attention to component selection and placement is essential for the proper functioning of the board.
 
+As a design concept, this board prioritizes through-hole components to facilitate manual assembly. It does contain a few SMD parts (like the CH340), but their pitches are relatively wide and should pose no problem for those who have experience with hand-soldering surface-mount devices.
+
 ## **1\. Introduction**
 
 Before beginning the assembly of this PCB, it is assumed that you have experience with soldering and basic electronics. If you are unsure about any steps, it is recommended to consult with experienced individuals or refer to relevant resources.
